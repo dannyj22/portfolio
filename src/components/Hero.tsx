@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Briefcase, Download } from "lucide-react";
+import { ArrowDown, ArrowRight, Briefcase, Download } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -136,86 +136,65 @@ export default function Hero() {
       </motion.div>
 
       {/* Mobile stacked composition */}
-      <div className="relative z-10 flex w-full flex-col items-center px-6 pt-20 pb-0 md:hidden">
-        <div className="flex flex-col items-center text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="text-lg font-medium tracking-wide text-muted"
-          >
-            Hi I&apos;m
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-1 flex flex-col items-center"
-          >
-            <span className="text-5xl font-black leading-none tracking-tight text-blue">
-              Daniel
-            </span>
-            <span className="text-4xl font-bold leading-tight tracking-tight text-white">
-              Johnson
-            </span>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-3 w-fit rounded-full border border-border-light bg-surface px-4 py-1.5 text-xs font-medium tracking-wide text-muted"
-          >
-            AI AUTOMATION ENGINEER
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-2 text-base font-bold tracking-wide text-white"
-          >
-            WEB DEVELOPER
-          </motion.p>
-        </div>
+      <div className="relative z-10 mx-auto flex w-full max-w-xl flex-col items-center px-6 pt-24 pb-16 text-center md:hidden">
+        <motion.span
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="rounded-full border border-border-light bg-surface px-4 py-1.5 text-xs font-medium tracking-wide text-muted"
+        >
+          AI AUTOMATION ENGINEER & WEB DEVELOPER
+        </motion.span>
+        <motion.h1
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-6 text-4xl font-black leading-tight tracking-tight text-white"
+        >
+          Designing{" "}
+          <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            Intelligent Apps
+          </span>{" "}
+          &amp; Visual Systems
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-2 flex flex-col items-center gap-1"
+        >
+          <span className="text-base font-bold tracking-wide text-blue">AI AUTOMATION</span>
+          <span className="font-mono text-xs tracking-widest text-muted">WEB DEVELOPER</span>
+        </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-4 text-sm leading-relaxed text-muted"
+        >
+          Building intelligent systems and modern digital experiences. Focused on AI
+          automation, web development, and clean design that performs.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-5 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row"
+          className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
         >
-          <a
-            href="/resume.pdf"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-gradient-to-b from-white/20 to-white/5 px-5 py-3 text-sm font-medium whitespace-nowrap text-white shadow-[0_1px_0_rgba(255,255,255,0.25)_inset] backdrop-blur-sm transition-colors hover:border-white/50 hover:from-white/25 hover:to-white/10 sm:w-auto"
-          >
-            <Download className="h-4 w-4" />
-            Download Resume
-          </a>
           <a
             href="#work"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-gradient-to-b from-white/20 to-white/5 px-5 py-3 text-sm font-medium whitespace-nowrap text-white shadow-[0_1px_0_rgba(255,255,255,0.25)_inset] backdrop-blur-sm transition-colors hover:border-white/50 hover:from-white/25 hover:to-white/10 sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-light sm:w-auto"
           >
-            <Briefcase className="h-4 w-4" />
-            View Projects
+            Explore My Work
+            <ArrowRight className="h-4 w-4" />
           </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative mt-6 w-[85vw] max-w-[340px]"
-        >
-          <div className="absolute top-1/4 left-1/2 -z-10 h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue/25 blur-[80px]" />
-          <img
-            src="/images/my-pic.png"
-            alt="Daniel"
-            className="pointer-events-none relative w-full select-none"
-            style={{
-              filter:
-                "brightness(0.92) drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)",
-            }}
-            draggable={false}
-          />
+          <a
+            href="#contact"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-gradient-to-b from-white/20 to-white/5 px-6 py-3 text-sm font-medium whitespace-nowrap text-white shadow-[0_1px_0_rgba(255,255,255,0.25)_inset] backdrop-blur-sm transition-colors hover:border-white/50 hover:from-white/25 hover:to-white/10 sm:w-auto"
+          >
+            Get in Touch
+          </a>
         </motion.div>
       </div>
 
