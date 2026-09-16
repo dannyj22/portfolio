@@ -28,24 +28,24 @@ function CarouselCard({
   project,
   index,
   count,
-  active,
+  activeIndex,
 }: {
   project: Project;
   index: number;
   count: number;
-  active: boolean;
+  activeIndex: number;
 }) {
   const Icon = iconMap[project.iconKey];
-  const isFocused = active;
-  const isNeighbor = Math.abs(active - index) === 1;
+  const isFocused = activeIndex === index;
+  const isNeighbor = Math.abs(activeIndex - index) === 1;
 
   return (
     <div className="flex w-full snap-center items-center justify-center px-2 py-5">
       <motion.article
         animate={{
           scale: isFocused ? 1 : 0.82,
-          y: isFocused ? 0 : index < active ? -48 : 48,
-          rotateX: isFocused ? 0 : index < active ? -14 : 14,
+          y: isFocused ? 0 : index < activeIndex ? -48 : 48,
+          rotateX: isFocused ? 0 : index < activeIndex ? -14 : 14,
           opacity: isFocused ? 1 : isNeighbor ? 0.55 : 0.3,
           filter: isFocused ? "blur(0px)" : "blur(1.5px)",
         }}
@@ -55,13 +55,13 @@ function CarouselCard({
       >
         <div
           className={`absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-blue/25 to-purple-600/25 blur-2xl transition-opacity duration-500 ${
-            active ? "opacity-100" : "opacity-0"
+            isFocused ? "opacity-100" : "opacity-0"
           }`}
         />
         <div className="mb-4 flex items-center justify-between">
           <div
             className={`flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-500 ${
-              active ? "bg-blue/20 text-blue-light" : "bg-blue/10 text-blue-light"
+              isFocused ? "bg-blue/20 text-blue-light" : "bg-blue/10 text-blue-light"
             }`}
           >
             <Icon className="h-5 w-5" />
@@ -144,7 +144,7 @@ export default function ProjectCarousel({
             project={project}
             index={index}
             count={projects.length}
-            active={index === active}
+            activeIndex={active}
           />
         ))}
       </div>
