@@ -13,9 +13,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel | Developer & Designer",
+  title: "Daniel Johnson | Developer & Designer",
   description:
-    "Personal portfolio of Daniel, a developer and designer building modern web experiences.",
+    "Personal portfolio of Daniel Johnson, a developer and designer building modern web experiences.",
 };
 
 export default function RootLayout({
