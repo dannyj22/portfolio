@@ -60,10 +60,10 @@ export default function Contact() {
                       Email
                     </span>
                     <a
-                      href="mailto:danieljohnson@example.com"
+                      href="mailto:oluwatomijohnson2004@gmail.com"
                       className="mt-0.5 -mx-2 inline-block px-2 py-1.5 text-sm font-semibold break-all text-foreground hover:text-blue-light sm:break-normal"
                     >
-                      danieljohnson@example.com
+                      oluwatomijohnson2004@gmail.com
                     </a>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function Contact() {
                 </p>
               </div>
               <a
-                href="mailto:danieljohnson@example.com"
+                href="mailto:oluwatomijohnson2004@gmail.com"
                 className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-light hover:shadow-blue-light/30"
               >
                 <span>Send Email Directly</span>
