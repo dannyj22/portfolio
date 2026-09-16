@@ -25,7 +25,7 @@ export default function Hero() {
       {/* Desktop composition */}
       <div className="relative z-10 mx-auto hidden h-full w-full max-w-6xl items-center px-6 md:flex">
         {/* Left text column */}
-        <div className="relative z-20 max-w-[350px] flex-shrink-0 lg:max-w-[355px]">
+        <div className="relative z-20 max-w-[350px] flex-shrink-0 pt-8 lg:max-w-[355px]">
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Mobile stacked composition */}
-      <div className="relative z-10 flex w-full flex-col items-center px-6 pt-16 pb-0 md:hidden">
+      <div className="relative z-10 flex w-full flex-col items-center px-6 pt-20 pb-0 md:hidden">
         <div className="flex flex-col items-center text-center">
           <motion.p
             initial={{ opacity: 0, y: 18 }}
