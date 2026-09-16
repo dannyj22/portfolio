@@ -136,7 +136,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Mobile stacked composition */}
-      <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-6 pt-16 pb-0 md:hidden">
+      <div className="relative z-10 flex w-full flex-col items-center px-6 pt-16 pb-0 md:hidden">
         <div className="flex flex-col items-center text-center">
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -203,7 +203,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative mt-auto w-[85vw] max-w-[340px]"
+          className="relative mt-6 w-[85vw] max-w-[340px]"
         >
           <div className="absolute top-1/4 left-1/2 -z-10 h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue/25 blur-[80px]" />
           <img
