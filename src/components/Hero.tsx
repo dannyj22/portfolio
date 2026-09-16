@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden"
+      className="relative flex items-center overflow-hidden md:min-h-screen"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 right-1/3 h-[500px] w-[500px] rounded-full bg-blue/15 blur-[150px]" />
@@ -136,7 +136,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Mobile stacked composition */}
-      <div className="relative z-10 flex w-full min-h-screen flex-col items-center justify-between px-6 pt-24 pb-0 md:hidden">
+      <div className="relative z-10 flex w-full flex-col items-center px-6 pt-16 pb-4 md:hidden">
         <div className="flex flex-col items-center text-center">
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -163,7 +163,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-4 w-fit rounded-full border border-border-light bg-surface px-4 py-1.5 text-xs font-medium tracking-wide text-muted"
+            className="mt-3 w-fit rounded-full border border-border-light bg-surface px-4 py-1.5 text-xs font-medium tracking-wide text-muted"
           >
             AI AUTOMATION ENGINEER
           </motion.p>
@@ -171,7 +171,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-3 text-base font-bold tracking-wide text-white"
+            className="mt-2 text-base font-bold tracking-wide text-white"
           >
             WEB DEVELOPER
           </motion.p>
@@ -181,7 +181,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-6 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row"
+          className="mt-5 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row"
         >
           <a
             href="/resume.pdf"
@@ -203,7 +203,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative w-[85vw] max-w-[340px]"
+          className="relative mt-5 w-[85vw] max-w-[340px]"
         >
           <div className="absolute top-1/4 left-1/2 -z-10 h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue/25 blur-[80px]" />
           <img
