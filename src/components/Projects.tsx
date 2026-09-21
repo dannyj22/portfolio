@@ -56,9 +56,9 @@ const projects: Project[] = [
     github: "https://github.com",
   },
   {
-    title: "NAPI FOOTWEAR — E-commerce Store",
+    title: "NAPI FOOTWEAR E-commerce Store",
     description:
-      "A full e-commerce experience built for a footwear brand — product catalog, cart, checkout flow, and a database-backed order system.",
+      "A full e-commerce experience built for a footwear brand, with product catalog, cart, checkout flow, and a database-backed order system.",
     tags: ["Next.js", "React", "JavaScript", "E-commerce", "Database"],
     iconKey: "LayoutTemplate",
     live: "https://example.com",
