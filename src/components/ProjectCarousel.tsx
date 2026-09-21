@@ -85,15 +85,10 @@ function CarouselCard({
           ))}
         </div>
         <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-blue px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-light"
-          >
+          <span className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-sm font-semibold text-muted-dark">
             <ExternalLink className="h-4 w-4" />
-            Live Demo
-          </a>
+            NOT AVAILABLE NOW
+          </span>
           <a
             href={project.github}
             target="_blank"

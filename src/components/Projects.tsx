@@ -38,10 +38,10 @@ const projects: Project[] = [
     github: "https://github.com",
   },
   {
-    title: "Workflow Automation Engine",
+    title: "AI Network Traffic Visualizer",
     description:
-      "A no-code engine that connects apps and schedules tasks, using AI to summarise triggers and generate the automation logic automatically.",
-    tags: ["React", "Node.js", "GPT-4"],
+      "A tool that ingests network traffic and uses AI to detect anomalies, chart patterns in real time, and flag suspicious activity for review.",
+    tags: ["Python", "AI", "Data Visualization"],
     iconKey: "Workflow",
     live: "https://example.com",
     github: "https://github.com",
@@ -56,10 +56,10 @@ const projects: Project[] = [
     github: "https://github.com",
   },
   {
-    title: "SaaS Landing Page",
+    title: "NAPI FOOTWEAR — E-commerce Store",
     description:
-      "A conversion-focused landing page with animated sections, polished typography, and a light/dark theme that matches the brand.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+      "A full e-commerce experience built for a footwear brand — product catalog, cart, checkout flow, and a database-backed order system.",
+    tags: ["Next.js", "React", "JavaScript", "E-commerce", "Database"],
     iconKey: "LayoutTemplate",
     live: "https://example.com",
     github: "https://github.com",
@@ -118,15 +118,10 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="mt-auto flex flex-wrap items-center gap-3 pt-8">
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-blue px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-blue-light hover:-translate-y-0.5"
-                    >
+                    <span className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-sm font-semibold text-muted-dark">
                       <ExternalLink className="h-4 w-4" />
-                      Live Demo
-                    </a>
+                      NOT AVAILABLE NOW
+                    </span>
                     <a
                       href={project.github}
                       target="_blank"
