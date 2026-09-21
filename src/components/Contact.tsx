@@ -1,5 +1,4 @@
 import { Mail, MapPin } from "lucide-react";
-import CopyEmailButton from "./CopyEmailButton";
 import ScrollReveal from "./ScrollReveal";
 
 function GithubIcon({ className }: { className?: string }) {
@@ -117,11 +116,23 @@ export default function Contact() {
                   Get in Touch
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
-                  Click the button below to copy my email address instantly.
-                  I&apos;ll get back to you as soon as possible!
+                  Send me an email directly and I&apos;ll get back to you as soon
+                  as possible!
                 </p>
               </div>
-              <CopyEmailButton />
+
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-xs font-medium tracking-wide text-muted-dark uppercase">
+                  Email
+                </span>
+                <a
+                  href="mailto:oluwatomijohnson2004@gmail.com"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold break-all text-foreground transition-colors hover:border-blue-light hover:text-blue-light"
+                >
+                  <Mail className="h-4 w-4 shrink-0 text-blue-light" />
+                  oluwatomijohnson2004@gmail.com
+                </a>
+              </div>
             </div>
           </ScrollReveal>
         </div>
