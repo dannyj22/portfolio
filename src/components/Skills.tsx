@@ -1,60 +1,65 @@
 import ScrollReveal from "./ScrollReveal";
 import {
-  SiReact,
   SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiPostgresql,
-  SiGraphql,
-  SiGit,
-  SiVercel,
-  SiFigma,
+  SiReact,
+  SiJavascript,
+  SiHtml5,
+  SiWordpress,
+  SiElementor,
+  SiWoocommerce,
+  SiPython,
+  SiCpanel,
 } from "react-icons/si";
 import {
+  FaMobileAlt,
   FaServer,
-  FaPalette,
-  FaPencilRuler,
-  FaSitemap,
-  FaUniversalAccess,
-  FaFlask,
+  FaDatabase,
+  FaGitAlt,
+  FaRobot,
+  FaTerminal,
+  FaBrain,
 } from "react-icons/fa";
 
 const skillGroups = [
   {
-    category: "Frontend",
+    category: "Web Development",
     skills: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
       { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "HTML/CSS", icon: SiHtml5, color: "#E34F26" },
+      { name: "Responsive Web Design", icon: FaMobileAlt, color: "#38BDF8" },
     ],
   },
   {
-    category: "Backend",
+    category: "CMS & E-Commerce",
     skills: [
-      { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "WordPress", icon: SiWordpress, color: "#21759B" },
+      { name: "Elementor", icon: SiElementor, color: "#92003B" },
+      { name: "WooCommerce", icon: SiWoocommerce, color: "#96588A" },
+    ],
+  },
+  {
+    category: "Backend & Data",
+    skills: [
+      { name: "Python", icon: SiPython, color: "#3776AB" },
       { name: "REST APIs", icon: FaServer, color: "#22D3EE" },
-      { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
+      { name: "Databases", icon: FaDatabase, color: "#F59E0B" },
     ],
   },
   {
-    category: "Design",
+    category: "AI & Automation",
     skills: [
-      { name: "UI Design", icon: FaPalette, color: "#A78BFA" },
-      { name: "Prototyping", icon: FaPencilRuler, color: "#F59E0B" },
-      { name: "Design Systems", icon: FaSitemap, color: "#34D399" },
-      { name: "Accessibility", icon: FaUniversalAccess, color: "#10B981" },
+      { name: "AI Automation", icon: FaRobot, color: "#10B981" },
+      { name: "Prompt Engineering", icon: FaTerminal, color: "#A78BFA" },
+      { name: "AI-Assisted Development", icon: FaBrain, color: "#EC4899" },
     ],
   },
   {
     category: "Tools",
     skills: [
-      { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "Vercel", icon: SiVercel, color: "#ffffff" },
-      { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-      { name: "Testing", icon: FaFlask, color: "#38BDF8" },
+      { name: "Git/GitHub", icon: FaGitAlt, color: "#F05032" },
+      { name: "cPanel", icon: SiCpanel, color: "#FF6C2C" },
     ],
   },
 ];
@@ -65,7 +70,7 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
           <p className="text-sm font-medium tracking-widest text-blue-light uppercase">
-            Skills and services
+            My toolkit
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
             What I bring to the table.
