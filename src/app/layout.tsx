@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -13,9 +19,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Johnson | Developer & Designer",
+  title: "Daniel Johnson | AI Automation Engineer & Web Developer",
   description:
-    "Personal portfolio of Daniel Johnson, a developer and designer building modern web experiences.",
+    "Portfolio of Daniel Johnson, an AI automation engineer and web developer building intelligent systems, e-commerce stores, and modern web experiences.",
 };
 
 export default function RootLayout({
@@ -24,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body>{children}</body>
     </html>

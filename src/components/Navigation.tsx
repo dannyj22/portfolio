@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
-  { label: "Blog", href: "#blog" },
+  { label: "Writing", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -17,68 +16,69 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border"
-          : "bg-transparent"
+          ? "border-b border-border bg-background/85 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 pt-4 pb-3">
-        <a href="#home" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-purple-600 text-sm font-black text-background">
-            DJ
-          </div>
-          <span className="hidden text-lg font-semibold text-foreground sm:block">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#home" className="group flex items-baseline gap-2">
+          <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
             Daniel Johnson
+          </span>
+          <span className="hidden font-mono text-[10px] tracking-widest text-muted-dark uppercase sm:inline">
+            / Portfolio
           </span>
         </a>
 
-<ul className="hidden items-center gap-6 md:flex">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="inline-flex items-center gap-1 rounded-lg px-3 py-2.5 text-sm text-muted transition-all duration-200 hover:bg-white/5 hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <ul className="hidden items-center gap-7 md:flex">
+          {navLinks.map((link, i) => (
+            <li key={link.href} className="flex items-center gap-7">
+              <a
+                href={link.href}
+                className="text-sm text-muted transition-colors duration-200 hover:text-foreground"
+              >
+                {link.label}
+              </a>
+              {i < navLinks.length - 1 && (
+                <span className="h-1 w-1 rounded-full bg-border-light" aria-hidden="true" />
+              )}
+            </li>
+          ))}
+        </ul>
 
-            <a
-              href="#contact"
-              className="hidden rounded-lg border border-white/30 bg-gradient-to-b from-white/20 to-white/5 px-5 py-2 text-sm font-medium text-white shadow-[0_1px_0_rgba(255,255,255,0.25)_inset] backdrop-blur-sm transition-colors hover:border-white/50 hover:from-white/25 hover:to-white/10 md:inline-flex"
-            >
-              Get in touch
-            </a>
+        <a
+          href="#contact"
+          className="hidden items-center gap-2 rounded-full border border-foreground bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors duration-200 hover:bg-blue hover:border-blue md:inline-flex"
+        >
+          Get in touch
+        </a>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex flex-col items-center justify-center gap-1.5 p-2.5 md:hidden"
+          className="flex flex-col items-center justify-center gap-1.5 p-2 md:hidden"
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           <motion.span
             animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="block h-px w-5 bg-foreground"
+            className="block h-px w-6 bg-foreground"
           />
           <motion.span
             animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block h-px w-5 bg-foreground"
+            className="block h-px w-6 bg-foreground"
           />
           <motion.span
             animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="block h-px w-5 bg-foreground"
+            className="block h-px w-6 bg-foreground"
           />
         </button>
       </nav>
@@ -90,26 +90,19 @@ export default function Navigation() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-border bg-background/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-border bg-background md:hidden"
           >
-          <div className="border-t border-border px-6 py-4">
-              <a href="#home" className="mb-3 flex items-center gap-3" onClick={() => setMobileOpen(false)}>
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-purple-600 text-sm font-black text-background">
-                  DJ
-                </div>
-                <span className="text-lg font-semibold text-foreground">
-                  Daniel Johnson
-                </span>
-              </a>
-              <ul className="flex flex-col gap-1">
+            <div className="px-6 py-4">
+              <ul className="flex flex-col">
                 {navLinks.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href} className="border-b border-border last:border-none">
                     <a
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-3 text-sm text-muted transition-colors hover:text-foreground"
+                      className="flex items-center justify-between py-4 text-base text-foreground"
                     >
                       {link.label}
+                      <span className="font-mono text-xs text-muted-dark">→</span>
                     </a>
                   </li>
                 ))}
@@ -117,7 +110,7 @@ export default function Navigation() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 block rounded-lg border border-white/30 bg-gradient-to-b from-white/20 to-white/5 px-5 py-3 text-center text-sm font-medium text-white"
+                className="mt-4 block rounded-full bg-foreground px-5 py-3 text-center text-sm font-medium text-background"
               >
                 Get in touch
               </a>
@@ -125,6 +118,6 @@ export default function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { ArrowUpRight } from "lucide-react";
 
 const posts = [
   {
@@ -24,41 +24,39 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="relative scroll-mt-20 py-16 md:py-24">
+    <section id="blog" className="scroll-mt-20 border-t border-border py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
-          <p className="text-sm font-medium tracking-widest text-blue-light uppercase">
-            Writing
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+          <div className="flex items-center justify-between font-mono text-[11px] tracking-[0.2em] text-muted-dark uppercase">
+            <span className="text-blue">04 — Writing</span>
+            <span className="hidden sm:inline">Notes &amp; ideas</span>
+          </div>
+          <h2 className="mt-6 max-w-2xl font-serif text-4xl leading-[1.05] font-medium tracking-tight text-foreground sm:text-5xl">
             Notes and ideas.
           </h2>
         </ScrollReveal>
 
-        <div className="mt-14 divide-y divide-border border-y border-border">
+        <div className="mt-12 border-t border-border">
           {posts.map((post, index) => (
-            <ScrollReveal key={post.title} delay={index * 0.08}>
+            <ScrollReveal key={post.title} delay={index * 0.05}>
               <a
                 href="#"
-                className="group flex flex-col gap-2 py-8 transition-colors duration-200 sm:flex-row sm:items-baseline sm:gap-8"
+                className="group grid gap-2 border-b border-border py-8 transition-colors duration-200 sm:grid-cols-[7rem_1fr_auto] sm:items-baseline sm:gap-8"
               >
-                <span className="w-24 shrink-0 text-sm text-muted-dark">
+                <span className="font-mono text-[11px] tracking-wide text-muted-dark uppercase">
                   {post.date}
                 </span>
-                <span className="flex-1">
-                  <span className="block text-lg font-medium tracking-tight text-foreground transition-colors duration-200 group-hover:text-blue-light">
+                <span>
+                  <span className="block font-serif text-xl font-medium tracking-tight text-foreground transition-colors duration-200 group-hover:text-blue sm:text-2xl">
                     {post.title}
                   </span>
-                  <span className="mt-2 block text-sm leading-relaxed text-muted">
+                  <span className="mt-2 block max-w-2xl text-sm leading-relaxed text-muted">
                     {post.excerpt}
                   </span>
                 </span>
-                <span className="hidden text-sm text-muted-dark transition-transform duration-200 group-hover:translate-x-1 sm:block">
+                <span className="hidden items-center gap-1 text-sm font-medium text-muted-dark transition-colors group-hover:text-blue sm:inline-flex">
                   Read
-                </span>
-                <span className="flex items-center gap-1 text-sm font-medium text-blue-light sm:hidden">
-                  Read
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-4 w-4" />
                 </span>
               </a>
             </ScrollReveal>

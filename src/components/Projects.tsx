@@ -1,28 +1,11 @@
 import ScrollReveal from "./ScrollReveal";
-import ProjectCarousel from "./ProjectCarousel";
-import {
-  Bot,
-  Workflow,
-  Globe,
-  LayoutTemplate,
-  ExternalLink,
-  GitBranch,
-  ChevronDown,
-  type LucideIcon,
-} from "lucide-react";
-
-const iconMap: Record<string, LucideIcon> = {
-  Bot,
-  Workflow,
-  Globe,
-  LayoutTemplate,
-};
+import { ArrowUpRight } from "lucide-react";
 
 export interface Project {
   title: string;
+  subtitle: string;
   description: string;
   tags: string[];
-  iconKey: string;
   live: string;
   github: string;
 }
@@ -30,113 +13,97 @@ export interface Project {
 const projects: Project[] = [
   {
     title: "AI Customer Support Agent",
+    subtitle: "AI Automation",
     description:
       "An intelligent support assistant that automates responses to common queries, learns from past conversations, and hands off complex issues to humans.",
     tags: ["OpenAI", "Next.js", "LangChain"],
-    iconKey: "Bot",
-    live: "https://example.com",
-    github: "https://github.com",
+    live: "",
+    github: "https://github.com/dannyj22",
   },
   {
     title: "AI Network Traffic Visualizer",
+    subtitle: "Data & AI",
     description:
       "A tool that ingests network traffic and uses AI to detect anomalies, chart patterns in real time, and flag suspicious activity for review.",
     tags: ["Python", "AI", "Data Visualization"],
-    iconKey: "Workflow",
-    live: "https://example.com",
-    github: "https://github.com",
+    live: "",
+    github: "https://github.com/dannyj22",
   },
   {
     title: "Business Website Redesign",
+    subtitle: "Web",
     description:
       "A modern marketing site for a services firm, focused on clear storytelling, fast performance, and a design system that scales.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    iconKey: "Globe",
-    live: "https://example.com",
-    github: "https://github.com",
+    live: "",
+    github: "https://github.com/dannyj22",
   },
   {
     title: "NAPI FOOTWEAR E-commerce Store",
+    subtitle: "E-commerce",
     description:
       "A full e-commerce experience built for a footwear brand, with product catalog, cart, checkout flow, and a database-backed order system.",
     tags: ["Next.js", "React", "JavaScript", "E-commerce", "Database"],
-    iconKey: "LayoutTemplate",
-    live: "https://example.com",
-    github: "https://github.com",
+    live: "",
+    github: "https://github.com/dannyj22",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="work" className="relative scroll-mt-20 py-16 md:py-24">
+    <section id="work" className="scroll-mt-20 border-t border-border py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
-          <p className="text-sm font-medium tracking-widest text-blue-light uppercase">
-            Selected work
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-            Projects I have built.
+          <div className="flex items-center justify-between font-mono text-[11px] tracking-[0.2em] text-muted-dark uppercase">
+            <span className="text-blue">02 — Selected work</span>
+            <span className="hidden sm:inline">{projects.length} projects</span>
+          </div>
+          <h2 className="mt-6 max-w-2xl font-serif text-4xl leading-[1.05] font-medium tracking-tight text-foreground sm:text-5xl">
+            Things I&apos;ve designed, built, and shipped.
           </h2>
         </ScrollReveal>
 
-        <div className="md:hidden">
-          <div className="mb-6 flex items-center justify-center gap-2 text-xs tracking-wide text-muted-dark">
-            <ChevronDown className="h-4 w-4 animate-bounce" />
-            Swipe to explore
-            <ChevronDown className="h-4 w-4 animate-bounce" />
-          </div>
-          <ProjectCarousel projects={projects} />
-        </div>
+        <div className="mt-12">
+          {projects.map((project, index) => (
+            <ScrollReveal key={project.title} delay={index * 0.05}>
+              <article className="group grid gap-5 border-t border-border py-9 md:grid-cols-[3rem_1fr_auto] md:gap-10 md:py-10">
+                <span className="font-mono text-sm text-muted-dark">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-        <div className="mt-14 hidden gap-6 md:grid md:grid-cols-2">
-          {projects.map((project, index) => {
-            const Icon = iconMap[project.iconKey];
-            return (
-              <ScrollReveal
-                key={project.title}
-                delay={index * 0.08}
-                className="w-full"
-              >
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:border-blue/40 hover:-translate-y-1 sm:p-8">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue/10 text-blue-light">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-xl font-semibold tracking-tight">
+                <div>
+                  <p className="font-mono text-[10px] tracking-[0.18em] text-blue uppercase">
+                    {project.subtitle}
+                  </p>
+                  <h3 className="mt-2 font-serif text-2xl font-medium tracking-tight text-foreground transition-colors duration-200 group-hover:text-blue sm:text-3xl">
                     {project.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
                     {project.description}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-border-light px-3 py-1 text-xs text-muted"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-8">
-                    <span className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-sm font-semibold text-muted-dark">
-                      <ExternalLink className="h-4 w-4" />
-                      NOT AVAILABLE NOW
-                    </span>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-all duration-200 hover:border-white/30 hover:-translate-y-0.5"
-                    >
-                      <GitBranch className="h-4 w-4" />
-                      GitHub
-                    </a>
-                  </div>
-                  <div className="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-blue to-blue-glow transition-all duration-300 group-hover:w-full" />
-                </article>
-              </ScrollReveal>
-            );
-          })}
+                  <p className="mt-4 font-mono text-[11px] tracking-wide text-muted-dark">
+                    {project.tags.join("  ·  ")}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-5 md:flex-col md:items-end md:gap-3">
+                  <span className="font-mono text-[11px] tracking-wide text-muted-dark uppercase">
+                    Live / soon
+                  </span>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-colors hover:text-blue"
+                  >
+                    GitHub
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
+          <div className="border-t border-border" />
         </div>
       </div>
     </section>
