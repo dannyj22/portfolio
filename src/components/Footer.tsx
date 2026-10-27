@@ -1,63 +1,119 @@
-interface IconProps {
-  className?: string;
-}
+"use client";
 
-function GithubIcon({ className = "" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.33 10.33 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
-    </svg>
-  );
-}
+import { useEffect, useState } from "react";
 
-function LinkedinIcon({ className = "" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V24h-4V8Zm7.5 0h3.83v2.19h.05c.53-1 1.83-2.19 3.72-2.19 3.98 0 4.9 2.62 4.9 6.02V24h-4v-8.5c0-2.03-.08-4.5-2.68-4.5-2.68 0-3.07 2.02-3.07 4.5V24h-4V8Z" />
-    </svg>
-  );
-}
+const navLinks = [
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Capabilities", href: "#skills" },
+  { label: "Writing", href: "#blog" },
+  { label: "Contact", href: "#contact" },
+];
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/dannyj22" },
+  { label: "LinkedIn", href: "https://linkedin.com/" },
+  { label: "Email", href: "mailto:oluwatomijohnson2004@gmail.com" },
+];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const [time, setTime] = useState("--:--");
+
+  useEffect(() => {
+    const format = () =>
+      new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Africa/Lagos",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).format(new Date());
+
+    setTime(format());
+    const timer = setInterval(() => setTime(format()), 30_000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <footer className="border-t border-border py-10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="font-serif text-lg font-medium tracking-tight text-foreground">
-            Daniel Johnson
-          </p>
-          <p className="mt-1 font-mono text-[10px] tracking-[0.18em] text-muted-dark uppercase">
-            © {year} — All rights reserved
-          </p>
+    <footer className="relative overflow-hidden border-t border-border py-14 sm:py-16">
+      <div className="pointer-events-none absolute -bottom-24 left-1/2 h-64 w-[80vw] -translate-x-1/2 rounded-full bg-accent/10 blur-[120px]" />
+      <div className="relative z-10 mx-auto max-w-[1440px] px-[clamp(20px,4vw,72px)]">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">
+              Portfolio / 2026
+            </p>
+            <a
+              href="#home"
+              className="display mt-5 block text-[clamp(2.6rem,7vw,5.8rem)] text-foreground transition-colors hover:text-accent"
+            >
+              Daniel <span className="serif-accent">Johnson.</span>
+            </a>
+            <p className="mt-4 font-mono text-[10px] tracking-[0.16em] text-muted uppercase">
+              AI Automation Engineer · Web Developer
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-12 sm:gap-20">
+            <div>
+              <p className="font-mono text-[10px] tracking-[0.18em] text-muted-dark uppercase">
+                Menu
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-muted transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="font-mono text-[10px] tracking-[0.18em] text-muted-dark uppercase">
+                Elsewhere
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {socials.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-sm text-muted transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <a
-            href="https://github.com/dannyj22"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            className="flex h-10 w-10 items-center justify-center border border-border text-muted transition-colors hover:border-foreground hover:text-foreground"
-          >
-            <GithubIcon className="h-4 w-4" />
-          </a>
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            className="flex h-10 w-10 items-center justify-center border border-border text-muted transition-colors hover:border-foreground hover:text-foreground"
-          >
-            <LinkedinIcon className="h-4 w-4" />
-          </a>
-          <a
-            href="#home"
-            className="ml-2 font-mono text-[10px] tracking-[0.18em] text-muted-dark uppercase hover:text-foreground"
-          >
-            Back to top ↑
-          </a>
+        <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-mono text-[10px] tracking-[0.14em] text-muted-dark uppercase">
+            © {new Date().getFullYear()} Daniel Johnson. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <span className="font-mono text-[10px] tracking-[0.14em] text-muted-dark uppercase">
+              Abuja, NG · {time} WAT
+            </span>
+            <a
+              href="#home"
+              className="group inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.14em] text-muted uppercase hover:text-foreground"
+            >
+              Back to top
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:-translate-y-0.5"
+              >
+                ↑
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
