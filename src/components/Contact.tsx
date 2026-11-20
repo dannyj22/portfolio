@@ -54,8 +54,8 @@ export default function Contact() {
           <ScrollReveal delay={0.1}>
             <div>
               <p className="max-w-md text-base leading-relaxed text-background/80 sm:text-lg">
-                Have a project, an idea, or a workflow that should run itself?
-                I&apos;m open to collaborations, AI projects, and web builds.
+                Have a project, an idea, or a product to build? I&apos;m open
+                to collaborations, full stack builds, and everything in between.
                 Reach out and I&apos;ll get back to you soon.
               </p>
               <a

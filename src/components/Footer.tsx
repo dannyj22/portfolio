@@ -49,7 +49,7 @@ export default function Footer() {
               Daniel <span className="serif-accent">Johnson.</span>
             </a>
             <p className="mt-4 font-mono text-[10px] tracking-[0.16em] text-muted uppercase">
-              AI Automation Engineer · Web Developer
+              Full stack engineer · Web developer
             </p>
           </div>
 

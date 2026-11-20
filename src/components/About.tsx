@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 const details = [
   { label: "Degree", value: "B.Sc. Computer Science" },
-  { label: "Focus", value: "AI Automation & Web Development" },
+  { label: "Focus", value: "Full Stack Web Development" },
   { label: "Location", value: "Abuja, Nigeria" },
 ];
 
@@ -27,27 +27,26 @@ export default function About() {
           <div>
             <ScrollReveal>
               <h2 className="display text-[clamp(2.15rem,5.2vw,4.6rem)] text-foreground">
-                I turn repetitive work into{" "}
-                <span className="serif-accent text-accent">systems</span> that
-                run{" "}
-                <span className="serif-accent text-accent">themselves.</span>
+                I build products end to end, from the{" "}
+                <span className="serif-accent text-accent">pixel</span> to the{" "}
+                <span className="serif-accent text-accent">database.</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-                I&apos;m Daniel Johnson, an AI automation engineer and web
-                developer. I care about writing clean code, removing repetitive
-                work through automation, and building digital products that feel
-                effortless to use.
+                I&apos;m Daniel Johnson, a full stack engineer. I care about
+                clean code, solid architecture, and building digital products
+                that feel effortless to use.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.16}>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
-                My work spans modern front-ends in Next.js and React, e-commerce
-                builds on WordPress and WooCommerce, and AI-powered workflows in
-                Python. I use state-of-the-art AI systems as co-pilots to ship
+                My work spans modern front-ends in Next.js and React, REST APIs
+                and services in Node.js and Python, data layers with SQL and
+                NoSQL, and e-commerce builds on WordPress and WooCommerce. I use
+                state-of-the-art AI systems as co-pilots to ship
                 production-ready applications faster without cutting corners.
               </p>
             </ScrollReveal>

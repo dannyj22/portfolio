@@ -7,7 +7,7 @@ const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const stats = [
   { value: "04", label: "Projects shipped" },
-  { value: "15+", label: "Tools mastered" },
+  { value: "19+", label: "Tools mastered" },
   { value: "24h", label: "Response time" },
 ];
 
@@ -169,7 +169,7 @@ export default function Hero() {
           className="flex items-center justify-between border-b border-border pb-4 font-mono text-[10px] tracking-[0.18em] text-muted uppercase sm:text-[11px]"
         >
           <span>Portfolio / 2026</span>
-          <span className="hidden md:inline">AI Automation Engineer</span>
+          <span className="hidden md:inline">Full Stack Engineer</span>
           <span>Abuja, NG</span>
         </motion.div>
 
@@ -182,7 +182,7 @@ export default function Hero() {
               className="inline-flex items-center gap-3 border border-border px-4 py-2 font-mono text-[10px] tracking-[0.18em] text-muted uppercase sm:text-[11px]"
             >
               <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-accent" />
-              AI Automation Engineer &amp; Web Developer
+              Full Stack Engineer
             </motion.p>
 
             <motion.h1
@@ -203,8 +203,8 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.32, ease }}
               className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-[15px]"
             >
-              I design and build intelligent systems, automated workflows, and
-              modern web experiences, from AI tooling to e-commerce stores that
+              I design and build complete web products, from React and Next.js
+              front-ends to Node.js APIs, databases, and deployments that
               perform.
             </motion.p>
 
@@ -300,7 +300,7 @@ export default function Hero() {
             <OrbitBadge />
 
             <p className="relative z-10 mt-5 max-w-[18rem] font-mono text-[10px] leading-relaxed tracking-[0.16em] text-muted-dark uppercase lg:pl-24">
-              Engineer, builder, and relentless optimiser of small things.
+              Full stack, front to back, with an eye for detail.
             </p>
           </motion.div>
         </div>

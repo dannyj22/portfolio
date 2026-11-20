@@ -26,9 +26,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Johnson | AI Automation Engineer & Web Developer",
+  title: "Daniel Johnson | Full Stack Engineer",
   description:
-    "Portfolio of Daniel Johnson, an AI automation engineer and web developer building intelligent systems, e-commerce stores, and modern web experiences.",
+    "Portfolio of Daniel Johnson, a full stack engineer building complete web products with Next.js, React, Node.js, and modern databases.",
 };
 
 export const viewport: Viewport = {

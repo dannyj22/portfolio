@@ -1,11 +1,12 @@
 const items = [
-  "AI Automation",
-  "Web Development",
-  "E-Commerce",
+  "React",
   "Next.js",
-  "Python",
-  "WordPress",
-  "UI Engineering",
+  "Node.js",
+  "JavaScript",
+  "HTML/CSS",
+  "Databases",
+  "REST APIs",
+  "E-Commerce",
 ];
 
 export default function Marquee() {

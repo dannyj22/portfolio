@@ -4,21 +4,21 @@ import {
   SiReact,
   SiJavascript,
   SiHtml5,
-  SiWordpress,
-  SiElementor,
-  SiWoocommerce,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
   SiPython,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiWordpress,
+  SiWoocommerce,
+  SiElementor,
   SiCpanel,
+  SiVercel,
+  SiFramer,
 } from "react-icons/si";
-import {
-  FaMobileAlt,
-  FaServer,
-  FaDatabase,
-  FaGitAlt,
-  FaRobot,
-  FaTerminal,
-  FaBrain,
-} from "react-icons/fa";
+import { FaServer, FaGitAlt } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
 const skillGroups: {
@@ -26,43 +26,46 @@ const skillGroups: {
   skills: { name: string; icon: IconType }[];
 }[] = [
   {
-    category: "Web Development",
+    category: "Frontend",
     skills: [
-      { name: "Next.js", icon: SiNextdotjs },
       { name: "React", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
       { name: "JavaScript", icon: SiJavascript },
       { name: "HTML/CSS", icon: SiHtml5 },
-      { name: "Responsive Web Design", icon: FaMobileAlt },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Framer Motion", icon: SiFramer },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express", icon: SiExpress },
+      { name: "REST APIs", icon: FaServer },
+      { name: "Python", icon: SiPython },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MySQL", icon: SiMysql },
     ],
   },
   {
     category: "CMS & E-Commerce",
     skills: [
       { name: "WordPress", icon: SiWordpress },
-      { name: "Elementor", icon: SiElementor },
       { name: "WooCommerce", icon: SiWoocommerce },
+      { name: "Elementor", icon: SiElementor },
     ],
   },
   {
-    category: "Backend & Data",
-    skills: [
-      { name: "Python", icon: SiPython },
-      { name: "REST APIs", icon: FaServer },
-      { name: "Databases", icon: FaDatabase },
-    ],
-  },
-  {
-    category: "AI & Automation",
-    skills: [
-      { name: "AI Automation", icon: FaRobot },
-      { name: "Prompt Engineering", icon: FaTerminal },
-      { name: "AI-Assisted Development", icon: FaBrain },
-    ],
-  },
-  {
-    category: "Tools",
+    category: "Tools & Deployment",
     skills: [
       { name: "Git / GitHub", icon: FaGitAlt },
+      { name: "Vercel", icon: SiVercel },
       { name: "cPanel", icon: SiCpanel },
     ],
   },

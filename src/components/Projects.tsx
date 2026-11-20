@@ -12,41 +12,51 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    title: "AI Customer Support Agent",
-    subtitle: "AI Automation",
+    title: "NAPI Footwear E-commerce Store",
+    subtitle: "E-commerce",
     description:
-      "An intelligent support assistant that automates responses to common queries, learns from past conversations, and hands off complex issues to humans.",
-    tags: ["OpenAI", "Next.js", "LangChain"],
+      "A complete e-commerce experience for a premium footwear label from Abuja: product catalog, collections, cart and checkout flow, all built on Next.js with a database-backed order system.",
+    tags: ["Next.js", "React", "Database", "Cart & Checkout"],
+    year: "2026",
+    live: "https://napifootwear.vercel.app/",
+    github: "https://github.com/dannyj22",
+  },
+  {
+    title: "Alder & Ash Property Platform",
+    subtitle: "Full Stack + AI",
+    description:
+      "A boutique real-estate platform: property search, neighborhood guides, and a plain-English AI concierge that shortlists homes and books viewings, built end to end on Next.js.",
+    tags: ["Next.js", "AI Assistant", "Search & Booking"],
+    year: "2026",
+    live: "https://alder-and-ash-xi.vercel.app/",
+    github: "https://github.com/dannyj22",
+  },
+  {
+    title: "AI Customer Support Agent",
+    subtitle: "Full Stack + AI",
+    description:
+      "A complete support platform: React dashboard and chat experience on Next.js, backed by a Node.js API that automates responses to common queries and hands off complex issues to humans.",
+    tags: ["Next.js", "Node.js", "OpenAI", "REST API"],
     year: "2026",
     live: "",
     github: "https://github.com/dannyj22",
   },
   {
     title: "AI Network Traffic Visualizer",
-    subtitle: "Data & AI",
+    subtitle: "Data & Dashboards",
     description:
-      "A tool that ingests network traffic and uses AI to detect anomalies, chart patterns in real time, and flag suspicious activity for review.",
-    tags: ["Python", "AI", "Data Visualization"],
+      "A tool that ingests network traffic through a Python service, detects anomalies with AI, and renders real-time charts and flagged activity in a clean front-end.",
+    tags: ["Python", "APIs", "Data Visualization"],
     year: "2026",
     live: "",
     github: "https://github.com/dannyj22",
   },
   {
     title: "Business Website Redesign",
-    subtitle: "Web",
+    subtitle: "Frontend",
     description:
-      "A modern marketing site for a services firm, focused on clear storytelling, fast performance, and a design system that scales.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    year: "2025",
-    live: "",
-    github: "https://github.com/dannyj22",
-  },
-  {
-    title: "NAPI FOOTWEAR E-commerce Store",
-    subtitle: "E-commerce",
-    description:
-      "A full e-commerce experience built for a footwear brand, with product catalog, cart, checkout flow, and a database-backed order system.",
-    tags: ["Next.js", "React", "JavaScript", "Database"],
+      "A modern marketing site for a services firm, focused on clear storytelling, fast performance, and a component-driven design system that scales.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
     year: "2025",
     live: "",
     github: "https://github.com/dannyj22",
@@ -93,7 +103,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.05}>
               <a
-                href={project.github}
+                href={project.live || project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group grid grid-cols-[2rem_1fr] gap-x-4 border-t border-border py-7 transition-all duration-500 hover:bg-surface/70 hover:px-4 sm:grid-cols-[2.5rem_1fr_auto] sm:gap-x-8 sm:py-9"
@@ -119,18 +129,13 @@ export default function Projects() {
 
                 <div className="col-span-2 mt-5 flex items-center justify-between gap-4 sm:col-span-1 sm:mt-0 sm:flex-col sm:items-end sm:justify-between">
                   <div className="flex items-center gap-3">
-                    {project.live ? (
-                      <a
-                        href={project.live}
-                        className="font-mono text-[10px] tracking-[0.16em] text-muted uppercase hover:text-foreground"
-                      >
-                        Live
-                      </a>
-                    ) : (
-                      <span className="font-mono text-[10px] tracking-[0.16em] text-muted-dark uppercase">
-                        Live / soon
-                      </span>
-                    )}
+                    <span
+                      className={`font-mono text-[10px] tracking-[0.16em] uppercase ${
+                        project.live ? "text-foreground" : "text-muted-dark"
+                      }`}
+                    >
+                      {project.live ? "Live site" : "Live / soon"}
+                    </span>
                     <span className="font-mono text-[10px] tracking-[0.16em] text-muted-dark uppercase">
                       {project.year}
                     </span>
